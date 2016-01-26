@@ -1,2 +1,2 @@
 # docker_selenium
-my docker dontainer to run selenium in python (phantomjs)
+a build project for a docker container to run selenium in python (phantomjs)
