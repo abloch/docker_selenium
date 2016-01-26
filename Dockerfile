@@ -11,4 +11,4 @@ ADD requirements.txt /opt/python/requirements.txt
 ADD main.py /opt/python/main.py
 RUN pip install -r /opt/python/requirements.txt 
 
-CMD pip install -r /opt/python/requirements.txt ; python /opt/python/main.py
+CMD [ -r /opt/python/requirements.txt ] && pip install -qIr /opt/python/requirements.txt ; if [ -r /opt/python/main.py ]; then python /opt/python/main.py; else printf 'USAGE: docker -itv `pwd`:/opt/python/ akiva/selenium\n\nyou also need to locally create a main.py\n'; fi
